@@ -42,6 +42,7 @@
             <div v-show="loading" class="multiselect__spinner"/>
           </slot>
         </transition>
+        <slot name="beforeSearch"></slot>
         <input
           ref="search"
           v-if="searchable"
@@ -64,6 +65,7 @@
           @keydown.delete.stop="removeLastElement()"
           class="multiselect__input"
         />
+        <slot name="afterSearch"></slot>
         <span
           v-if="isSingleLabelVisible"
           class="multiselect__single"
