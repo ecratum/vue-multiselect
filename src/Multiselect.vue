@@ -42,7 +42,7 @@
             <div v-show="loading" class="multiselect__spinner"/>
           </slot>
         </transition>
-        <slot name="beforeSearch"></slot>
+        <slot name="beforeSearch" :filteredopts="filteredOptions"></slot>
         <input
           ref="search"
           v-if="searchable"
